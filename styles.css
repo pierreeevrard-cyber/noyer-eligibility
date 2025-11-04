@@ -16,6 +16,7 @@ body {
   min-height: 100vh;
 }
 
+/* ---------- HEADER ---------- */
 .header {
   width: 100%;
   padding: 20px 40px;
@@ -32,8 +33,9 @@ body {
 }
 
 .logo {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .logo-text {
@@ -42,6 +44,7 @@ body {
   letter-spacing: 1px;
 }
 
+/* ---------- MAIN CONTENT ---------- */
 .container {
   flex: 1;
   max-width: 720px;
@@ -63,8 +66,10 @@ h1 {
   opacity: 0.75;
   font-size: 16px;
   margin: 0;
+  line-height: 1.6;
 }
 
+/* ---------- CARD ---------- */
 .card {
   background: #0c0c0c;
   border: 1px solid #1b1b1b;
@@ -82,10 +87,27 @@ h1 {
 h2 {
   margin-top: 0;
   margin-bottom: 20px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
 }
 
+/* ---------- WARNING ---------- */
+.warning {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.warning strong {
+  color: #ff8585;
+}
+
+/* ---------- FORM ---------- */
 #eligibility-form {
   display: flex;
   gap: 10px;
@@ -101,6 +123,13 @@ h2 {
   color: #fff;
   font-family: "JetBrains Mono", monospace;
   font-size: 15px;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+#url:focus {
+  outline: none;
+  border-color: #444;
+  background: #151515;
 }
 
 #verifyBtn {
@@ -112,12 +141,13 @@ h2 {
   font-weight: 600;
   cursor: pointer;
   font-family: "JetBrains Mono", monospace;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #verifyBtn:hover {
   background: #ddd;
   color: #000;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 .status {
@@ -126,10 +156,30 @@ h2 {
   font-size: 15px;
 }
 
+/* ---------- FOOTER ---------- */
 .foot {
   text-align: center;
   opacity: 0.6;
   margin-top: 40px;
   padding-bottom: 20px;
   font-size: 14px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .logo-text {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  #verifyBtn {
+    width: 100%;
+  }
 }
