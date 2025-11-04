@@ -19,20 +19,30 @@
       <h1>Vérifiez votre site</h1>
       <p class="subtitle">
         Noyer analyse votre site pour vérifier si vos biens immobiliers sont visibles en HTML statique.<br><br>
-        Pas besoin de connaissances techniques — entrez simplement l’adresse de la page listant vos biens pour savoir si votre site est compatible.
+        Pas besoin de connaissances techniques — entrez simplement l’adresse de la page listant vos biens et un exemple de bien pour vérifier la compatibilité.
       </p>
     </section>
 
     <section class="card">
       <h2>Vérifiez la page de vos biens immobiliers</h2>
+
       <form id="eligibility-form" class="eligibility">
-        <input id="url" name="url" type="url" placeholder="https://www.votre-agence.fr/biens" required />
+        <div class="field-group">
+          <label for="url">🌐 URL de la page listant vos biens</label>
+          <input id="url" name="url" type="url" placeholder="https://www.votre-agence.fr/biens" required />
+        </div>
+
+        <div class="field-group">
+          <label for="exampleUrl">🏠 URL d’un bien présent sur cette page</label>
+          <input id="exampleUrl" name="exampleUrl" type="url" placeholder="https://www.votre-agence.fr/biens/maison-123" required />
+        </div>
+
         <button id="verifyBtn" type="submit">Vérifier</button>
       </form>
 
       <p class="warning">
         🚨 <strong>Important :</strong> ne mettez <u>pas</u> l’adresse d’accueil de votre site (ex : <em>www.monagence.fr</em>)<br>
-        mais celle de la <u>page où vos biens à vendre sont affichés</u> (ex : <em>www.monagence.fr/biens</em>).
+        mais celle de la <u>page où vos biens à vendre sont affichés</u> (ex : <em>www.monagence.fr/biens</em>) et l’URL d’un <u>bien réel</u> visible sur cette page.
       </p>
     </section>
 
