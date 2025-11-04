@@ -8,24 +8,25 @@
 </head>
 <body>
   <main class="container">
-    <header class="hero" id="hero">
+    <header class="hero">
       <h1>Noyer</h1>
       <p class="subtitle">Vérifiez si votre site est compatible (biens visibles en HTML statique).</p>
     </header>
 
-    <section id="eligibility-root" class="card">
+    <section class="card">
       <h2>Vérifier mon site</h2>
-      <form id="eligibility-form">
-        <input type="url" id="eligibility-url" name="url" placeholder="https://www.votre-agence.fr/biens" required />
-        <button id="eligibility-btn" type="submit">Vérifier</button>
+      <form id="eligibility-form" class="eligibility">
+        <input id="url" name="url" type="url" placeholder="https://www.votre-agence.fr/biens" required />
+        <button id="verifyBtn" type="submit">Vérifier</button>
       </form>
-      <p id="eligibility-status" class="status" aria-live="polite"></p>
+      <p id="status" class="status">Interface prête. On branchera le webhook à l'étape suivante.</p>
     </section>
 
     <footer class="foot">
-      <small>© <span id="year"></span> Noyer. Tous droits réservés.</small>
+      <small>© 2025 Noyer. Tous droits réservés.</small>
     </footer>
   </main>
+
   <script src="app.js"></script>
 </body>
 </html>
