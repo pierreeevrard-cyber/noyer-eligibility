@@ -1,6 +1,6 @@
 // === CONFIG ===
 // Mets ici l’URL "Production URL" du node Webhook (onglet Webhook URLs) — pas l'URL de test.
-const N8N_WEBHOOK_URL = "https://pierre07.app.n8n.cloud/webhook/d086fafa-765a-43f0-8b40-8ed6e6b38142";
+const N8N_WEBHOOK_URL = "https://pierre07.app.n8n.cloud/webhook-test/79a23a90-c50e-4fe7-a1b1-1fa6a4184b9e";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("eligibility-form");
