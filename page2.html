@@ -8,6 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="top-bar">
+    <span class="logo-text">Noyer</span>
+  </header>
+
   <main class="container">
     <section class="hero">
       <h1>Informations supplémentaires</h1>
@@ -18,18 +22,16 @@
     </section>
 
     <section class="card">
-      <form id="extra-form">
+      <form id="extra-form" class="form-grid">
         <div class="field-group">
-          <label>🌐 URL de la page des biens (verrouillée)</label>
-          <input id="page_url" name="page_url" type="url" readonly />
+          <label>🌐 URL de la page des biens</label>
+          <input id="page_url" name="page_url" type="url" readonly class="readonly" />
         </div>
 
         <div class="field-group">
-          <label>🏠 URL d’un bien (verrouillée)</label>
-          <input id="example_url" name="example_url" type="url" readonly />
+          <label>🏠 URL d’un bien</label>
+          <input id="example_url" name="example_url" type="url" readonly class="readonly" />
         </div>
-
-        <hr>
 
         <div class="field-group">
           <label>🏠 URL d’un autre bien</label>
@@ -37,22 +39,30 @@
         </div>
 
         <div class="field-group">
-          <label>🖼️ URL d’une photo de bien 1</label>
-          <input id="photo1" name="photo1" type="url" placeholder="https://www.votre-agence.fr/images/photo1.jpg" required />
-        </div>
-
-        <div class="field-group">
-          <label>🖼️ URL d’une photo de bien 2</label>
-          <input id="photo2" name="photo2" type="url" placeholder="https://www.votre-agence.fr/images/photo2.jpg" required />
-        </div>
-
-        <div class="field-group">
           <label>🏷️ URL du logo</label>
           <input id="logo" name="logo" type="url" placeholder="https://www.votre-agence.fr/logo.png" required />
         </div>
 
-        <button id="sendBtn" type="submit">Envoyer les informations</button>
+        <div class="field-group photo-group">
+          <label>🖼️ URL d’une photo de bien 1</label>
+          <input id="photo1" name="photo1" type="url" placeholder="https://www.votre-agence.fr/images/photo1.jpg" required />
+        </div>
+
+        <div class="field-group photo-group">
+          <label>🖼️ URL d’une photo de bien 2</label>
+          <input id="photo2" name="photo2" type="url" placeholder="https://www.votre-agence.fr/images/photo2.jpg" required />
+        </div>
       </form>
+
+      <p class="info-note">
+        💡 Pour trouver les URL de photos, ouvrez une page de bien sur votre site, 
+        faites un clic droit sur deux photos différentes, puis choisissez 
+        “Copier l’adresse de l’image”.
+      </p>
+
+      <button id="sendBtn" type="submit" form="extra-form" class="btn-primary">
+        🚀 S’abonner à Noyer
+      </button>
 
       <p id="status" class="status"></p>
     </section>
