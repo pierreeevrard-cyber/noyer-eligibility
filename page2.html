@@ -23,6 +23,7 @@
 
     <section class="card">
       <form id="extra-form" class="form-grid">
+        <!-- 🏢 Nom de l’agence -->
         <div class="field-group full-width">
           <label>🏢 Nom de votre agence</label>
           <input id="nom_agence" name="nom_agence" type="text" placeholder="Ex : Agence Grandjean Immobilier" required />
@@ -66,7 +67,7 @@
       </p>
 
       <button id="sendBtn" type="submit" form="extra-form" class="btn-primary">
-        🚀 S’abonner à Noyer
+        🚀 Envoyer les informations
       </button>
 
       <p id="status" class="status"></p>
@@ -78,65 +79,5 @@
   </main>
 
   <script src="page2.js"></script>
-
-  <script src="https://js.stripe.com/v3/"></script>
-  <script>
-    const stripe = Stripe("pk_test_51SQ7b0KtSUAGLnZ0Q5lTBxz0D09veV7xumgSGSocbM5GDcxe4Ct5hR8QxcNlQxnsCJfiwFuB0kKMvt00k01VJv91");
-
-    document.getElementById("sendBtn").addEventListener("click", async (e) => {
-      e.preventDefault();
-
-      const nomAgence = document.getElementById("nom_agence").value.trim();
-      const pageUrl = document.getElementById("page_url").value.trim();
-      const exampleUrl = document.getElementById("example_url").value.trim();
-      const extraBien = document.getElementById("extra_bien").value.trim();
-      const logo = document.getElementById("logo").value.trim();
-      const photo1 = document.getElementById("photo1").value.trim();
-      const photo2 = document.getElementById("photo2").value.trim();
-
-      if (!nomAgence || !pageUrl) {
-        alert("⚠️ Merci de remplir les champs obligatoires avant de continuer.");
-        return;
-      }
-
-      try {
-        await fetch("https://pierre07.app.n8n.cloud/webhook/noyer_agence", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            nom_agence: nomAgence,
-            page_url: pageUrl,
-            example_url: exampleUrl,
-            extra_bien: extraBien,
-            logo: logo,
-            photo1: photo1,
-            photo2: photo2,
-          }),
-        });
-      } catch (err) {
-        console.error("Erreur n8n:", err);
-        alert("❌ Erreur lors de l’envoi des données à Noyer. Réessayez.");
-        return;
-      }
-
-      try {
-        const res = await fetch("https://noyer-eligibility.onrender.com/create-checkout-session", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-        });
-
-        const data = await res.json();
-
-        if (data.url) {
-          window.location.href = data.url;
-        } else {
-          throw new Error("URL de session Stripe manquante");
-        }
-      } catch (err) {
-        console.error("Erreur Stripe:", err);
-        alert("❌ Impossible d’ouvrir la page Stripe. Vérifie la connexion.");
-      }
-    });
-  </script>
 </body>
 </html>
