@@ -30,12 +30,12 @@
 
         <div class="field-group">
           <label>🌐 URL de la page des biens</label>
-          <input id="page_url" name="page_url" type="url" readonly class="readonly" />
+          <input id="page_url" name="page_url" type="url" placeholder="https://www.votre-agence.fr/biens" required />
         </div>
 
         <div class="field-group">
           <label>🏠 URL d’un bien</label>
-          <input id="example_url" name="example_url" type="url" readonly class="readonly" />
+          <input id="example_url" name="example_url" type="url" placeholder="https://www.votre-agence.fr/biens/maison-123" required />
         </div>
 
         <div class="field-group">
@@ -79,23 +79,28 @@
 
   <script src="https://js.stripe.com/v3/"></script>
   <script>
+    // Récupération automatique des paramètres URL (depuis page 1)
+    const params = new URLSearchParams(window.location.search);
+    const nomAgence = params.get("agency_name");
+    const pageUrl = params.get("page_url");
+    const exampleUrl = params.get("example_url");
+
+    if (nomAgence) document.getElementById("nom_agence").value = decodeURIComponent(nomAgence);
+    if (pageUrl) document.getElementById("page_url").value = decodeURIComponent(pageUrl);
+    if (exampleUrl) document.getElementById("example_url").value = decodeURIComponent(exampleUrl);
+
     const stripe = Stripe("pk_test_51SQ7b0KtSUAGLnZOQ518zmedFbxdcflIBXz0DQ9Ve7XumgSGSOcbM5GDcxe4Ct5Rh8QxcNlqXnsCJfiwFuB0KMvt00kO1VJv91");
 
     document.getElementById("sendBtn").addEventListener("click", async (e) => {
       e.preventDefault();
 
-      const nomAgence = document.getElementById("nom_agence").value.trim();
-      const pageUrl = document.getElementById("page_url").value.trim();
-      const exampleUrl = document.getElementById("example_url").value.trim();
-      const extraBien = document.getElementById("extra_bien").value.trim();
+      const nom_agence = document.getElementById("nom_agence").value.trim();
+      const page_url = document.getElementById("page_url").value.trim();
+      const example_url = document.getElementById("example_url").value.trim();
+      const extra_bien = document.getElementById("extra_bien").value.trim();
       const logo = document.getElementById("logo").value.trim();
       const photo1 = document.getElementById("photo1").value.trim();
       const photo2 = document.getElementById("photo2").value.trim();
-
-      if (!nomAgence || !pageUrl) {
-        alert("⚠️ Merci de remplir les champs obligatoires avant de continuer.");
-        return;
-      }
 
       const status = document.getElementById("status");
       status.textContent = "⏳ Envoi en cours...";
@@ -105,13 +110,13 @@
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            nom_agence: nomAgence,
-            page_url: pageUrl,
-            example_url: exampleUrl,
-            extra_bien: extraBien,
-            logo: logo,
-            photo1: photo1,
-            photo2: photo2,
+            nom_agence,
+            page_url,
+            example_url,
+            extra_bien,
+            logo,
+            photo1,
+            photo2,
           }),
         });
 
