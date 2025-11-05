@@ -28,7 +28,7 @@
         <div class="form-grid">
           <div class="field">
             <label for="agencyName">🏢 Nom de l’agence</label>
-            <input id="agencyName" name="agencyName" type="text" placeholder="Ex : Agence ABC" required />
+            <input id="agencyName" name="agencyName" type="text" placeholder="Ex : Agence Grandjean Immobilier" required />
           </div>
 
           <div class="field">
@@ -44,6 +44,12 @@
           <button id="verifyBtn" type="submit" class="btn-primary">Vérifier</button>
         </div>
       </form>
+
+      <!-- Message d'avertissement important -->
+      <p class="warning-box">
+        ⚠️ <strong>Important :</strong> ne mettez <strong>pas</strong> l’adresse de votre page d’accueil (ex : <em>www.monagence.fr</em>),<br>
+        mais celle où <strong>tous vos biens à vendre</strong> sont listés (ex : <em>www.monagence.fr/biens</em>).
+      </p>
 
       <p id="status" class="status"></p>
     </section>
