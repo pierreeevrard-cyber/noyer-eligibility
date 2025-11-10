@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Noyer — Publication automatique immobilière</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Styles spécifiques à la page d'accueil --- */
+    .hero-home {
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+
+    .hero-home h1 {
+      font-size: 42px;
+      background: linear-gradient(90deg, #7bd88f, #6be0c2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
+    }
+
+    .hero-home p {
+      font-size: 16px;
+      opacity: 0.8;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #7bd88f;
+      color: #7bd88f;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-outline:hover {
+      background: #7bd88f;
+      color: #000;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 80px;
+    }
+
+    .feature {
+      background: #0c0c0c;
+      border: 1px solid #1b1b1b;
+      border-radius: 16px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: 0.2s ease;
+    }
+
+    .feature:hover {
+      border-color: #7bd88f;
+      transform: translateY(-4px);
+    }
+
+    .feature span {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .feature p {
+      font-size: 14px;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      opacity: 0.6;
+      margin-top: 80px;
+      font-size: 13px;
+      padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Barre du haut -->
+  <header class="top-bar">
+    <span class="logo-text">Noyer</span>
+  </header>
+
+  <main class="container">
+
+    <!-- Section principale -->
+    <section class="hero-home">
+      <h1>🌿 Noyer, l’automatisation pour votre agence immobilière</h1>
+      <p>
+        Gagnez du temps et augmentez votre visibilité.  
+        Noyer publie automatiquement vos biens immobiliers sur les réseaux sociaux —  
+        Facebook, Instagram, LinkedIn et plus encore.
+      </p>
+
+      <div class="btn-group">
+        <button class="btn-primary" onclick="window.location.href='index.html'">
+          🔍 Vérifier la compatibilité de mon site
+        </button>
+        <button class="btn-outline" onclick="window.location.href='plan.html'">
+          💳 Découvrir les abonnements
+        </button>
+      </div>
+    </section>
+
+    <!-- Avantages / fonctionnalités -->
+    <section class="features">
+      <div class="feature">
+        <span>⚡</span>
+        <h3>Automatisation totale</h3>
+        <p>Vos annonces sont détectées automatiquement et publiées sur vos réseaux sans effort.</p>
+      </div>
+
+      <div class="feature">
+        <span>📈</span>
+        <h3>Visibilité accrue</h3>
+        <p>Chaque bien atteint plus d’acheteurs potentiels grâce à des publications régulières et optimisées.</p>
+      </div>
+
+      <div class="feature">
+        <span>🔗</span>
+        <h3>Connexion simple</h3>
+        <p>En quelques minutes, connectez votre site immobilier à Noyer et laissez le système travailler pour vous.</p>
+      </div>
+
+      <div class="feature">
+        <span>💼</span>
+        <h3>Pour toutes les agences</h3>
+        <p>Que vous soyez une petite agence ou un grand réseau, Noyer s’adapte à vos besoins.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2025 Noyer. Tous droits réservés.
+  </footer>
+</body>
+</html>
